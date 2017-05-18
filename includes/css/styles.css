@@ -1,0 +1,92 @@
+/*
+
+My Custom CSS
+=============
+
+Author:  Brad Hussey
+Updated: August 2013
+Notes:	 Hand coded for Udemy.com
+
+*/
+
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+   .navbar-brand{
+      padding: 0px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+   }
+
+   .navbar-brand img {
+     display: block;
+     position: relative;
+     -webkit-transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+     transition: all 0.4s cubic-bezier(0.88,-0.99, 0, 1.81);
+  }
+
+  .navbar-brand:hover img {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+ }
+
+ #logo{
+   height: 100px;
+   width: 100px;
+
+}
+
+.navbar-nav{
+   margin-top: 30px;
+   margin-left: 10px;
+
+}
+
+.navbar{
+   height: auto;
+   background:black;
+   opacity: 0.7;
+}
+
+.collapse ul li a {
+   color: white;
+   font-family: Raleway, sans-serif;
+   font-size: 1vw;
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+#active a{
+   color: #FF5733;
+}
+.collapse ul li a:hover{
+   color: #FF5733;
+   text-decoration: underline;
+}
+
+/* --------------------------------------
+   myStore
+   -------------------------------------- */
+   .myStore{
+     margin-top: 120px;
+   }
+
+/* --------------------------------------
+   Footer
+   -------------------------------------- */
+   footer {
+      background: #333;
+      color: #eee;
+      font-size: 11px;
+      padding: 20px;
+   }
+   ul.unstyled {
+      list-style: none;
+      padding: 0;
+   }
+   ul li a{
+     color:#b94a48;
+   }

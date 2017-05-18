@@ -1,0 +1,30 @@
+[
+  { "name":"The Hypnotist",
+    "description":"Scandinavian crime bestseller taking the world by storm",
+    "Price":274.00,
+    "image":"./images/Hypnotist.jpg"
+  },
+  { "name":"The Monk Who Sold His Ferrari",
+    "description":"A renowned inspirational fiction",
+    "Price":150.00,
+    "image":"./images/TheMonk.jpg"
+  },
+  { "name":"The Monk Who Sold His Ferrari",
+    "description":"A novel of life and death and the people caught in between",
+    "Price":230.00,
+    "image":"./images/TheFaultInOurStars.jpg"
+  },
+  { "name":"Playing It My Way ",
+    "description":"The autobiography of the highest scoring batsman of all time.",
+    "Price":340.00,
+    "image":"./images/PlayingItMyWay.jpg"
+  },
+
+  { "name":"A Walk To Remember",
+    "description":"a tale of two teenagers who fall in love with each other despite being incompatible",
+    "Price":190.00,
+    "image":"./images/AWalkToRemember.jpg"
+  },
+
+
+]
