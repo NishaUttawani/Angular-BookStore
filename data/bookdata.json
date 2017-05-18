@@ -1,30 +1,55 @@
 [
-  { "name":"The Hypnotist",
+  { "id":"book1",
+    "name":"The Hypnotist",
     "description":"Scandinavian crime bestseller taking the world by storm",
-    "Price":274.00,
-    "image":"./images/Hypnotist.jpg"
+    "price":274.00,
+    "image":"./images/Hypnotist.jpg",
+    "pages":"624 pages",
+    "publisher":"Blue Door (12 May 2011)",
+    "language:":"English",
+    "review":4.0
   },
-  { "name":"The Monk Who Sold His Ferrari",
+  { "id":"book2",
+    "name":"The Monk Who Sold His Ferrari",
     "description":"A renowned inspirational fiction",
-    "Price":150.00,
-    "image":"./images/TheMonk.jpg"
+    "price":150.00,
+    "image":"./images/TheMonk.jpg",
+    "pages":"198 pages",
+    "publisher":"Jaico Publishing House; First edition (25 September 2003)",
+    "language:":"English",
+    "review":4.5
   },
-  { "name":"The Monk Who Sold His Ferrari",
+  { "id":"book3",
+    "name":"The Fault In Our Stars",
     "description":"A novel of life and death and the people caught in between",
-    "Price":230.00,
-    "image":"./images/TheFaultInOurStars.jpg"
+    "price":230.00,
+    "image":"./images/TheFaultInOurStars.jpg",
+    "pages":"336 pages",
+    "publisher":"Penguin; Movie Tie-in Edition edition (28 May 2014)",
+    "language:":"English",
+    "review":4.5
   },
-  { "name":"Playing It My Way ",
+  { "id":"book4",
+    "name":"Playing It My Way ",
     "description":"The autobiography of the highest scoring batsman of all time.",
-    "Price":340.00,
-    "image":"./images/PlayingItMyWay.jpg"
+    "price":340.00,
+    "image":"./images/PlayingItMyWay.jpg",
+    "pages":"496 pages",
+    "publisher":"Hodder & Stoughton; Reprint edition (16 December 2015)",
+    "language:":"English",
+    "review":4.5
   },
 
-  { "name":"A Walk To Remember",
+  { "id":"book5",
+    "name":"A Walk To Remember",
     "description":"a tale of two teenagers who fall in love with each other despite being incompatible",
-    "Price":190.00,
-    "image":"./images/AWalkToRemember.jpg"
-  },
+    "price":190.00,
+    "image":"./images/AWalkToRemember.jpg",
+    "pages":"308 pages",
+    "publisher":"Little, Brown Book Group (4 May 2006)",
+    "language:":"English",
+    "review": 4.5
+  }
 
 
 ]

@@ -67,43 +67,84 @@
 
     <!--start of myStore-->
     <div class="myStore container" >
-      <h1>List Of Books</h1>
-      <div class="book row" ng-repeat="book in books">
+      <h1 class="main-heading">List Of Books</h1>
+      <div width="100%" style="max-width:1000px"class="book row" ng-repeat="book in books">
         <div class="row">
-          <div class="col-10">
-            <h4>{{book.name|uppercase}}</h4>
+          <div class="col-8 book-name">
+            <h5>{{book.name|uppercase}}</h5>
           </div>
-          <div class="col-2">
-            <h4>{{book.price|currency}}</h4>
+          <div align="right" class="col-4 book-price">
+            <h5>{{book.price|currency : "Rs."}}</h5>
           </div>
 
         </div> <!--end of row1-->
         <div class="row">
-          <div class="col-4">
-            <p>{{book.description}}</p>
-            <img src="" alt="Book Image is missing">
+          <div class="col-8">
+            <p class="book-description">{{book.description}}</p>
+            <img class="book-image" src={{book.image}} alt="Book Image is missing">
           </div>
         </div><!--end of row2-->
+				<br>
+				<div class="row">
+					<div class="col-6">
+						<div class="tabbable">
+							<ul class="nav nav-tabs" id="tabs"+{{book.id}}>
+								<li class="active"><a href="#tab1" data-toggle="tab">Description </a></li>
+								<li><a href="#tab2" data-toggle="tab">Specifications</a></li>
+								<li><a href="#tab3" data-toggle="tab">Reviews</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane active" id="tab1">
+									<h5>Description</h5>
+									<p class="book-description">{{book.description}}</p>
+								</div><!-- end tab-pane -->
+
+								<div class="tab-pane" id="tab2">
+									<h4>Specifications</h4>
+									<h5>Paperback:<span>{{book.pages}}</span></h5>
+									<h5>Publisher:<span>{{book.publisher}}</span></h5>
+									<h5>Language:<span>{{book.language}}</span></h5>
+									<h5>Average Customer Riview:<span>{{book.review}}</span></h5>
+								</div><!-- end tab-pane -->
+
+								<div class="tab-pane" id="tab3">
+
+								</div><!-- end tab-pane -->
+							</div><!-- end tab-content -->
+						</div><!-- end tabbable -->
+
+					</div><!--end of col-6-->
+				</div><!--end of row3-->
+				<hr>
       </div><!--end of book-->
     </div><!--end of myStore-->
 
 	</div><!--end of main container-->
+
+	<!-- First try for the online version of jQuery-->
+	<script src="http://code.jquery.com/jquery.js"></script>
+
+	<!-- If no online access, fallback to our hardcoded version of jQuery -->
+	<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+
+	<!-- Bootstrap JS -->
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 <footer>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-2">
-				<h6>Copyright &copy; 2016 TheBookStore</h6>
+				<h5>Copyright &copy; 2016 TheBookStore</h5>
 			</div><!-- end col-sm-2 -->
 
 			<div class="col-sm-4">
-				<h6>About Us</h6>
+				<h5>About Us</h5>
 				<p>The Book Store is a online book store helps you get you almost every book easily at low rates. Provides you a chance to show your skills by paticipating in various competitions online. </p>
 			</div><!-- end col-sm-4 -->
 
 			<div class="col-sm-2">
-				<h6>Navigation</h6>
+				<h5>Navigation</h5>
 				<ul class="unstyled">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Services</a></li>
@@ -113,7 +154,7 @@
 			</div><!-- end col-sm-2 -->
 
 			<div class="col-sm-2">
-				<h6>Follow Us</h6>
+				<h5>Follow Us</h5>
 				<ul class="unstyled">
 					<li><a href="#"><i class="fa fa-facebook-official" aria-hidden="true">   Facebook</i></a></li>
 					<li><a href="#"><i class=" fa fa-twitter-square" aria-hidden="true">   Twitter</i></a></li>
@@ -124,7 +165,7 @@
 			</div><!-- end col-sm-2 -->
 
 			<div class="col-sm-2">
-				<h6>Coded with <span class="glyphicon glyphicon-heart"></span> by Nisha Uttawani</h6>
+				<h5>Coded with <span class="glyphicon glyphicon-heart"></span> by Nisha Uttawani</h5>
 			</div><!-- end col-sm-2 -->
 		</div><!-- end row -->
 	</div><!-- end container -->
