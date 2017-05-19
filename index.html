@@ -68,7 +68,7 @@
     <!--start of myStore-->
     <div class="myStore container" >
       <h1 class="main-heading">List Of Books</h1>
-      <div width="100%" style="max-width:1000px"class="book row" ng-repeat="book in books">
+      <div width="100%" style="max-width:1000px"class="book row" ng-repeat="book in books" ng-show={{book.purchasable}}>
         <div class="row">
           <div class="col-8 book-name">
             <h5>{{book.name|uppercase}}</h5>
@@ -81,36 +81,42 @@
         <div class="row">
           <div class="col-8">
             <p class="book-description">{{book.description}}</p>
-            <img class="book-image" src={{book.image}} alt="Book Image is missing">
+            <img class="book-image col-8" src={{book.image}} alt="Book Image is missing">
+						<button ng-hide={{book.soldout}} class="btn btn-primary col-4 align-bottom" name="button">Add to Cart</button>
           </div>
         </div><!--end of row2-->
 				<br>
 				<div class="row">
 					<div class="col-6">
 						<div class="tabbable">
-							<ul class="nav nav-tabs" id="tabs"+{{book.id}}>
-								<li class="active"><a href="#tab1" data-toggle="tab">Description </a></li>
-								<li><a href="#tab2" data-toggle="tab">Specifications</a></li>
-								<li><a href="#tab3" data-toggle="tab">Reviews</a></li>
+							<ul class="nav nav-tabs" ng-init="tab=1">
+								<li ng-class="active:tab===1">
+									<a href ng-click="tab=1">Description </a>
+								</li>
+								<li ng-class="active:tab===2">
+									<a href ng-click="tab=2" data-toggle="tab">Specifications</a>
+								</li>
+								<li ng-class="active:tab===3">
+									<a href ng-click="tab=3" data-toggle="tab">Reviews</a>
+								</li>
 							</ul>
-							<div class="tab-content">
-								<div class="tab-pane active" id="tab1">
-									<h5>Description</h5>
-									<p class="book-description">{{book.description}}</p>
-								</div><!-- end tab-pane -->
-
-								<div class="tab-pane" id="tab2">
-									<h4>Specifications</h4>
-									<h5>Paperback:<span>{{book.pages}}</span></h5>
-									<h5>Publisher:<span>{{book.publisher}}</span></h5>
-									<h5>Language:<span>{{book.language}}</span></h5>
-									<h5>Average Customer Riview:<span>{{book.review}}</span></h5>
-								</div><!-- end tab-pane -->
-
-								<div class="tab-pane" id="tab3">
-
-								</div><!-- end tab-pane -->
-							</div><!-- end tab-content -->
+							<div ng-show="tab===1">
+								<h5>Description</h5>
+								<p class="book-description">{{book.description}}</p>
+							</div>
+							<div class="spcf" ng-show="tab===2">
+								<h4>Specifications</h4>
+								<h5>Paperback:<span>{{book.pages}}</span></h5>
+								<h5>Publisher:<span>{{book.publisher}}</span></h5>
+								<h5>Language:<span>{{book.lang}}</span></h5>
+								<h5>Average Customer Riview:<span>{{book.review}}</span></h5>
+							</div>
+							<div ng-show="tab===3">
+								<div class="review bs-callout bs-callout-default" ng-repeat="review in book.reviews">
+									<h5>Star:{{review.star}} <span>{{review.review}}</span></h5>
+									<p>by:{{review.email}}</p>
+								</div>
+							</div>
 						</div><!-- end tabbable -->
 
 					</div><!--end of col-6-->

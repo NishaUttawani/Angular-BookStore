@@ -6,8 +6,20 @@
     "image":"./images/Hypnotist.jpg",
     "pages":"624 pages",
     "publisher":"Blue Door (12 May 2011)",
-    "language:":"English",
-    "review":4.0
+    "review":4.0,
+    "lang":"English",
+    "purchasable":true,
+    "soldout":false,
+    "reviews":[
+                { "star":4.5,
+                  "review":"A must read",
+                  "email":"john@gmail.com"
+                },
+                { "star":4,
+                  "review":"Another gem",
+                  "email":"peter@gmail.com"
+                }
+              ]
   },
   { "id":"book2",
     "name":"The Monk Who Sold His Ferrari",
@@ -16,8 +28,10 @@
     "image":"./images/TheMonk.jpg",
     "pages":"198 pages",
     "publisher":"Jaico Publishing House; First edition (25 September 2003)",
-    "language:":"English",
-    "review":4.5
+    "review":4.5,
+    "lang":"English",
+    "purchasable":true,
+    "soldout":false
   },
   { "id":"book3",
     "name":"The Fault In Our Stars",
@@ -26,8 +40,10 @@
     "image":"./images/TheFaultInOurStars.jpg",
     "pages":"336 pages",
     "publisher":"Penguin; Movie Tie-in Edition edition (28 May 2014)",
-    "language:":"English",
-    "review":4.5
+    "review":4.5,
+    "lang":"English",
+    "purchasable":false,
+    "soldout":false
   },
   { "id":"book4",
     "name":"Playing It My Way ",
@@ -36,8 +52,10 @@
     "image":"./images/PlayingItMyWay.jpg",
     "pages":"496 pages",
     "publisher":"Hodder & Stoughton; Reprint edition (16 December 2015)",
-    "language:":"English",
-    "review":4.5
+    "review":4.5,
+    "lang":"English",
+    "purchasable":true,
+    "soldout":true
   },
 
   { "id":"book5",
@@ -47,8 +65,10 @@
     "image":"./images/AWalkToRemember.jpg",
     "pages":"308 pages",
     "publisher":"Little, Brown Book Group (4 May 2006)",
-    "language:":"English",
-    "review": 4.5
+    "review": 4.5,
+    "lang":"English",
+    "purchasable":true,
+    "soldout":false
   }
 
 
