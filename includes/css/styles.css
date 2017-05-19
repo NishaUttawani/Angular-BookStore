@@ -93,11 +93,19 @@ Notes:	 Hand coded for Udemy.com
      height:50%;
    }
 
-   .spcf,.review h5{
+   .spcf h5{
      font-weight: bold;
    }
 
-    .spcf, .review h5 span{
+    .spcf h5 span{
+     font-weight: normal;
+   }
+
+   .review h5{
+     font-weight: bold;
+   }
+
+   .review h5 span{
      font-weight: normal;
    }
 

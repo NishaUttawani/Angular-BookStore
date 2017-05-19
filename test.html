@@ -1,0 +1,88 @@
+var app = angular.module("ngStoryTime", []);
+
+       var _stories = [
+       {
+           Id: 1,
+           Title: 'Man Falls Off The World!',
+           Body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+           Date: '7 March 2015',
+           Images: [],
+           Comments: [{ Body:'LOL!', Name:'Michael', Date:'1 April 2015' }, { Body:'Tis a shame that.', Name:'William', Date:'1 April 2015' }]
+       },
+       {
+           Id: 2,
+           Title: 'Woman Eats Badger!',
+           Body: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+           Date: '8 March 2015',
+           Images: [],
+           Comments: []
+       }
+       ];
+
+       app.controller('StoryController', function($scope){
+
+           $scope.pageTitle = 'Welcome to the StoryTime website!';
+
+           //  Initialise the story, and blank Comment property here
+           this.Stories = _stories;
+
+           this.addComment = function(story){
+               //  Is there a better way to do this??
+               var commentValue = document.getElementById('txtComment_' + story.Id);
+               var nameValue = document.getElementById('txtName_' + story.Id);
+
+               //  Create the object that holds the new comment value
+               var myNewComment = {
+                   Body: commentValue.value,
+                   Name: nameValue.value,
+                   Date: '1 May 2015'
+               };
+
+               //  Add the comment to the array
+               story.Comments.push(myNewComment);
+               commentValue.value = '';
+               nameValue.value = '';
+           };
+       });
+
+<body ng-controller='StoryController as storyCtrl'>
+
+<h1>{{pageTitle}}</h1>
+
+<!-- Alias the controller for use in this section -->
+<div ng-repeat="story in storyCtrl.Stories">
+
+   <!-- For each Story, detail and show it -->
+   <h2>{{story.Title}} </h2>
+   <h3>{{story.Date | date:'medium' }}</h3>
+   <p>{{story.Body}}
+
+   <div ng-repeat="comment in story.Comments">
+       <h4>{{comment.Name}} - {{comment.Date | date:'medium'}} </h4>
+       <em>"{{comment.Body}}"</em>
+   </div>
+
+   <!-- Show and hide an introduction depending on if a story has a comment, or not -->
+   <h4 ng-show="story.Comments.length > 0">Have a Comment? There are {{story.Comments.length}} comments made so far!</h4>
+   <h4 ng-show="story.Comments.length == 0">Have a Comment? Be the first to comment on this excellent piece of journalism</h4>
+
+   <!-- Start of the new form that holds the story's comments, we put the story's Id on all the HtmL so we can get this later, but i'm not sure if this is actually a good idea, yet. -->
+   <form name="frmStory_{{story.Id}}" ng-submit="storyCtrl.addComment(story)">
+       Name: <br />
+       <input id="txtName_{{story.Id}}" required /><br />
+       Comment:<br/>
+       <textarea id="txtComment_{{story.Id}}" required></textarea>
+       <button ng-disabled="frmStory_{{story.Id}}.$invalid">Add My Comment</button>
+   </form>
+
+   <!--correction-->
+   <form name="frmStory_{{story.Id}}" ng-submit="storyCtrl.addComment(story)">
+      Name: <br />
+      <input ng-model="story.newComment.Name" required /><br />
+      Comment:<br/>
+      <textarea ng-model="story.newComment.Body" required></textarea>
+      <button ng-disabled="frmStory_{{story.Id}}.$invalid">Add My Comment</button>
+  </form>
+   <hr/>
+</div>
+</body>
